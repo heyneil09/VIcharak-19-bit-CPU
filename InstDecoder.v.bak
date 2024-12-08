@@ -1,0 +1,16 @@
+module InstDecoder(
+input [18:0] instruction,
+input [4:0] opcode,
+output reg [3:0] rs1,rs2,rd,
+output reg [9:0] immediate);
+
+always@(*0
+
+begin 
+opcode= instruction[18:14];
+rs1= instrcution[13:10];
+rs2= instrcution[9:6];
+rd= instrcution[5:2];
+immediate= instruction[9:0];
+end 
+endmodule

@@ -1,0 +1,88 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do ALU_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+Z:/Desktop/Vicharak {Z:/Desktop/Vicharak/InstDecoder.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module InstDecoder
+# 
+# Top level modules:
+# 	InstDecoder
+# vlog -vlog01compat -work work +incdir+Z:/Desktop/Vicharak {Z:/Desktop/Vicharak/ALU.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ALU
+# 
+# Top level modules:
+# 	ALU
+# vlog -vlog01compat -work work +incdir+Z:/Desktop/Vicharak {Z:/Desktop/Vicharak/RegisterFile.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module RegisterFile
+# 
+# Top level modules:
+# 	RegisterFile
+# vlog -vlog01compat -work work +incdir+Z:/Desktop/Vicharak {Z:/Desktop/Vicharak/DataMemory.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module DataMemory
+# 
+# Top level modules:
+# 	DataMemory
+# vlog -vlog01compat -work work +incdir+Z:/Desktop/Vicharak {Z:/Desktop/Vicharak/instFetch.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module instFetch
+# 
+# Top level modules:
+# 	instFetch
+# vlog -vlog01compat -work work +incdir+Z:/Desktop/Vicharak {Z:/Desktop/Vicharak/top.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+# vlog -vlog01compat -work work +incdir+Z:/Desktop/Vicharak {Z:/Desktop/Vicharak/ProgramCounter.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ProgramCounter
+# 
+# Top level modules:
+# 	ProgramCounter
+# vlog -vlog01compat -work work +incdir+Z:/Desktop/Vicharak/output_files {Z:/Desktop/Vicharak/output_files/ControlUnit.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ControlUnit
+# 
+# Top level modules:
+# 	ControlUnit
+# 
+vsim work.top
+# vsim work.top 
+# Loading work.top
+# Loading work.ProgramCounter
+# Loading work.InstDecoder
+# Loading work.instFetch
+# Loading work.RegisterFile
+# Loading work.ALU
+# Loading work.ControlUnit
+# Loading work.DataMemory
+# ** Warning: (vsim-3015) Z:/Desktop/Vicharak/top.v(10): [PCDPC] - Port size (19 or 19) does not match connection size (1) for port 'progcnt'. The port definition is at: Z:/Desktop/Vicharak/ProgramCounter.v(3).
+# 
+#         Region: /top/pc
+# ** Warning: (vsim-3015) Z:/Desktop/Vicharak/top.v(13): [PCDPC] - Port size (19 or 19) does not match connection size (1) for port 'wrdata'. The port definition is at: Z:/Desktop/Vicharak/RegisterFile.v(4).
+# 
+#         Region: /top/regi
+noforce sim:/top/clk
+force -freeze sim:/top/clk 1 0, 0 {12 ps} -r 25
+force -freeze sim:/top/reset 1 0
+force -freeze sim:/top/data1 1 0, 0 {50 ps} -r 100
+force -freeze sim:/top/data1 1110001110001110001 0
+force -freeze sim:/top/data2 1111000011110000111 0
+force -freeze sim:/top/instruction 0010100011001011111 0
+run -all
+# WARNING: No extended dataflow license exists
+# Break key hit 
+# Break in Module RegisterFile in file Z:/Desktop/Vicharak/RegisterFile.v

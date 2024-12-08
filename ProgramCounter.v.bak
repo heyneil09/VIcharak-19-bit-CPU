@@ -1,0 +1,48 @@
+module ProgramCounter (
+input clk,reset,update,branch,jump,call,ret,
+input [18:0] progcnt,jumpadd,
+output reg[18:0] progcntout);
+
+reg [18:0] v1 [0:15] ;
+reg [3:0] stackpointer;
+
+always@(posedge clk or posedge reset)
+begin 
+if(reset )
+begin 
+progcntout<=0;
+stckpointer<=0;
+end 
+
+else if (ret)
+begin stackpointer<=stackpointer+1;
+progcntout<=v1[stackpointer];
+end 
+
+else if (call)
+begin
+v1[stackpointer]<=progcntout+1;
+stackpointer <= stackpointer-1;
+progcntout<=jumpadd;
+end 
+
+else is(branch )
+begin 
+progcntout<=jumpadd;
+end 
+
+else is(jump )
+begin 
+progcntout<=jumpadd;
+end 
+
+else 
+begin 
+progcntout<=progcnt
+end 
+
+end 
+endmodule
+
+
+

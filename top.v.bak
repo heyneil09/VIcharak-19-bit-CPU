@@ -1,0 +1,13 @@
+module top (
+input clk,reset);
+wire [18:0]progcon, nextpc, pcup,wrdata,instruction,result,memdata,data1,data2,address;
+wire [4:0] opcode;
+wire [3:0] rs1,rs2,rd;
+wire [9:0] immediate;
+wire regwr, memrd,memwr,branch,jump,call,ret;
+
+
+
+
+
+endmodule
